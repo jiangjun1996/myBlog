@@ -12,5 +12,5 @@
 #过滤所有target子目录
 target/
 
-#过滤掉整个文件夹
-/springbootLog/
+#过滤掉springbootLog下面的全部内容
+/springbootLog/*
