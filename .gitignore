@@ -13,12 +13,5 @@
 target/
 
 #过滤掉springbootLog下面的全部内容
-*.log
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-*.gz
+**springbootLog/
+
