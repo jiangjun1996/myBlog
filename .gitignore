@@ -1,7 +1,7 @@
 # Compiled class file
 *.class
 #过滤IDEA生成的配置文件夹
-/idea/
+/.idea/
 .settings/
 #过滤IDEA生成的配置文件
 .DS_Store

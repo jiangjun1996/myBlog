@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b84b8469-e0de-4ac3-b1e4-34aa2baf4b58" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -33,16 +32,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="BlogApplicationTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/src/test/java/com/xp/blog/BlogApplicationTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1470">
-              <caret line="61" column="37" lean-forward="false" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CommentMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog/src/main/java/com/xp/blog/mapper/CommentMapper.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -65,11 +54,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="misc.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="misc.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
               <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uiDesigner.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="94" column="21" lean-forward="true" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -116,23 +125,6 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TypeMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/src/main/resources/mapper/TypeMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="7" column="73" lean-forward="false" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="73" />
-              <folding>
-                <marker date="1584864095013" expanded="true" signature="243:310" ph="INSERT INTO t_type... " />
-                <marker date="1584864095013" expanded="true" signature="371:463" ph="UPDATE t_type... " />
-                <marker date="1584864095013" expanded="true" signature="557:587" ph="SELECT id,ty... t_type" />
-                <marker date="1584864095013" expanded="true" signature="678:742" ph="SELECT id,ty... t_type" />
-                <marker date="1584864095013" expanded="true" signature="835:911" ph="SELECT id,ty... t_type" />
-                <marker date="1584864095013" expanded="true" signature="968:1020" ph="DELETE FROM t_type... " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -184,8 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/blog/src/main/java/com/xp/blog/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/blog/src/main/resources/mapper/UserMapper.xml" />
         <option value="$PROJECT_DIR$/blog/src/main/java/com/xp/blog/config/controller/admin/AdminController.java" />
         <option value="$PROJECT_DIR$/blog/src/main/java/com/xp/blog/BlogApplication.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -234,7 +224,9 @@
         <option value="$PROJECT_DIR$/blog/src/test/java/com/xp/blog/BlogApplicationTests.java" />
         <option value="$PROJECT_DIR$/blog/src/main/java/com/xp/blog/mapper/CommentMapper.java" />
         <option value="$PROJECT_DIR$/blog/src/main/java/com/xp/blog/config/aop/LogAspect.java" />
+        <option value="$PROJECT_DIR$/.idea/uiDesigner.xml" />
         <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -304,11 +296,6 @@
             <path>
               <item name="myblog" type="b2602c69:ProjectViewProjectNode" />
               <item name="myblog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myblog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myblog" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myblog" type="b2602c69:ProjectViewProjectNode" />
@@ -870,7 +857,7 @@
       <workItem from="1585744060260" duration="1198000" />
       <workItem from="1585894751871" duration="5267000" />
       <workItem from="1587452281127" duration="2540000" />
-      <workItem from="1587469759957" duration="948000" />
+      <workItem from="1587469759957" duration="1239000" />
     </task>
     <servers />
   </component>
@@ -907,7 +894,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254079000" />
+    <option name="totallyTimeSpent" value="254370000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1008,20 +995,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/blog/src/main/java/com/xp/blog/entity/Blog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2640">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog/src/main/resources/templates/admin/blogs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="82" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blog/src/main/java/com/xp/blog/controller/admin/TagController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -1396,10 +1369,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="94" column="21" lean-forward="true" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="21" />
           <folding />
         </state>
       </provider>
