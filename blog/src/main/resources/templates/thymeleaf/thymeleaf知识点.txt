@@ -1,0 +1,10 @@
+th:each属性用于迭代循环，语法：th:each="obj,iterStat:${objList}"
+迭代对象可以是Java.util.List,java.util.Map,数组等;
+iterStat称作状态变量，属性有：
+    index:当前迭代对象的index（从0开始计算）
+    count: 当前迭代对象的index(从1开始计算)
+    size:被迭代对象的大小
+    current:当前迭代变量
+    even/odd:布尔值，当前循环是否是偶数/奇数（从0开始计算）
+    first:布尔值，当前循环是否是第一个
+    last:布尔值，当前循环是否是最后一个

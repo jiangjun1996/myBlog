@@ -1,0 +1,33 @@
+#指定日志级别
+logging:
+  level:
+    #root相当于默认级别设置
+    root: info
+    #指定特定包或者类下面的日志级别
+    com:
+      xp:
+        blog: info
+  #设置日志输出文件位置
+  file:
+      path: springbootLog
+
+  #指定输出日志的格式
+  # %d{yyyy/MM/dd-HH:mm:ss}——日志输出时间
+  # %thread——输出日志的进程名字，这在Web应用以及异步任务处理中很有用
+  # %-5level——日志级别，并且使用5个字符靠左对齐
+  # %logger——日志输出者的名字
+  # %msg——日志消息
+  # %n——平台的换行符
+  pattern:
+
+    #控制台的输出格式
+    console:  "%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n"
+    #文件里面的输出格式
+    file: "%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n"
+
+
+
+
+
+
+

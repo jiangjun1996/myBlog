@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+
+    <!--设置上下文名称,，默认上下文名称为“default”。但可以使用<contextName>设置成其他名字，
+    用于区分不同应用程序的记录。一旦设置，不能修改,可以通过%contextName来打印日志上下文名称。-->
+    <contextName>myBlogAppName</contextName>
+
+
+    <!--用来定义变量值的标签，<property>有两个属性，name和value；
+    其中name的值是变量的名称，value的值时变量定义的值。通过<property>定义的值
+    会被插入到logger上下文中。定义变量后，可以使${}来使用变量。
+    变量有三个作用域：local  context  system
+       local 作用域在配置文件内有效，
+       context 作用域的有效范围延伸至 logger context，
+       system 作用域的范围最广，整个 JVM 内都有效。-->
+    <property name="log_path" value="/myBloglogPath" scope="local"/>
+
+
+    <!--appender用来格式化日志输出节点，有俩个属性name和class，name名称可以随便取，
+    在root里面配置名称一样的即可   class用来指定哪种输出策略，常用就是控制台输出策略和文件输出策略-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+
+        <!--encoder指定输出格式-->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}---> [%thread] %-5level %logger{50} ---> %msg%n</pattern>
+        </encoder>
+
+    </appender>
+
+
+    <!-- RollingFileAppender用于切分文件日志 随着时间越长日志会越来越多，
+    全部在一个文件里面不方便查看 -->
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+
+            <!--FileNamePattern定义了日志的切分方式把每一天的日志归档到一个文件中-->
+            <FileNamePattern>${log_path}/TestWeb.log.%d{yyyy-MM-dd}.log</FileNamePattern>
+
+            <!--表示只保留最近30天的日志，以防止日志填满整个磁盘空间。-->
+            <MaxHistory>30</MaxHistory>
+
+        </rollingPolicy>
+
+        <!--指定输出的格式-->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+        </encoder>
+        <!--日志文件最大的大小-->
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+
+            <!--用来指定日志文件的上限大小，例如设置为10MB的话，那么到了这个值，就会删除旧的日志。-->
+            <MaxFileSize>10MB</MaxFileSize>
+
+        </triggeringPolicy>
+    </appender>
+
+    <!-- root节点是必选节点，用来指定最基础的日志输出级别，只有一个level属性。 -->
+    <root level="INFO">
+        <appender-ref ref="console" />
+        <appender-ref ref="file" />
+    </root>
+
+   <!-- 据不同环境（prod:生产环境，test:测试环境，dev:开发环境）来定义不同的日志输出。
+
+    文件名称不是logback.xml，想使用spring扩展profile支持，要以logback-spring.xml命名
+
+    测试环境+开发环境. 多个使用逗号隔开. -->
+    <springProfile name="test,dev">
+        <logger name="com.xp.blog.controller" level="INFO" />
+    </springProfile>
+    <!-- 生产环境. -->
+    <springProfile name="prod">
+        <logger name="com.xp.blog.controller" level="INFO" />
+    </springProfile>
+</configuration>

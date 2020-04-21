@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+		<link rel="stylesheet"  th:href="@{/css/me.css}">
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+
+		<link rel="stylesheet" th:href="@{/jQueryPagination/css/jquery.pagination.css}">
+		<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+		<script th:src="@{/jQueryPagination/js/jquery.pagination.min.js}"></script>
+	</head>
+
+	<body>
+
+
+	<!--导航-->
+	<div th:include="common/head::common_head"></div>
+	<br>
+	<br>
+	<br>
+
+	<!--中间内容-->
+	<div  class="m-container-small m-padded-tb-big">
+		<div class="ui container">
+
+
+			<table class="ui celled table">
+				<thead>
+				<tr>
+					<th></th>
+					<th>分类名称</th>
+					<th>操作</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="typeList,typeStat:${typeList}">
+					<td th:text="${typeStat.count}"></td>
+					<td th:text="${typeList.typeName}"></td>
+					<td>
+						<a href="#" th:href="@{/admin/editerTypeInput(id=${typeList.id})}" class="ui mini teal basic button">编辑</a>
+						<a href="#" th:href="@{/admin/deleteType(id=${typeList.id})}" class="ui mini red basic button">删除</a>
+					</td>
+				</tr>
+				</tbody>
+				<tfoot>
+				<tr>
+					<th colspan="6">
+						<a href="#" th:href="@{/admin/toTypeInput}" class="ui mini right floated teal basic button">新增</a>
+					</th>
+				</tr>
+
+
+				</tfoot>
+			</table>
+
+			<div class="box">
+				<div id="pagination3" class="page fl"></div>
+			</div>
+
+
+		</div>
+	</div>
+
+
+
+
+
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<!--底部footer-->
+		<div th:include="common/footer::common_footer"></div>
+		<script>
+			$(function() {
+
+
+				$("#pagination3").pagination({
+					currentPage: 4,
+					totalPage: 16,
+					isShow: true,
+					count: 7,
+					homePageText: "首页",
+					endPageText: "尾页",
+					prevPageText: "上一页",
+					nextPageText: "下一页",
+					callback: function(current) {
+						$("#current3").text(current)
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>

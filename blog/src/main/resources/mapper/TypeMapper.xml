@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace = "com.xp.blog.mapper.TypeMapper">
+
+
+    
+    <insert id="addType">
+        INSERT INTO t_type (typeName) VALUES (#{typeName,jdbcType=VARCHAR})
+    </insert>
+    
+    <update id="updateTypeById">
+        UPDATE t_type SET typeName = #{typeName,jdbcType=VARCHAR} WHERE id  = #{id,jdbcType=INTEGER}
+    </update>
+    
+    <select id="getAllType" resultType="com.xp.blog.entity.Type">
+        SELECT id,typeName FROM t_type
+    </select>
+
+    <select id="getTypeById" resultType="com.xp.blog.entity.Type">
+        SELECT id,typeName FROM t_type WHERE id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <select id="getTypeByName" resultType="com.xp.blog.entity.Type">
+        SELECT id,typeName FROM t_type WHERE typeName = #{typeName,jdbcType=VARCHAR}
+    </select>
+
+    <delete id="deleteTypeById">
+        DELETE FROM t_type WHERE id = #{id,jdbcType=INTEGER}
+    </delete>
+</mapper>

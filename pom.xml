@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!--指定父工程spring-boot-starter-parent-->
+
+
+	<!--本模块的基本信息-->
+	<groupId>com.xp</groupId>
+	<artifactId>myblog</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>myblog</name>
+	<description>Demo project for Spring Boot</description>
+
+	<!--指定java以及各个依赖的版本-->
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+
+	<!--指定子模块-->
+	<modules>
+		<module>blog</module>
+		<module>common</module>
+	</modules>
+
+    <!-- 继承说明：这里继承SpringBoot提供的父工程 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.7.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+</project>

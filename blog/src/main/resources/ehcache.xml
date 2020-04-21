@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+		 maxBytesLocalHeap="50M">
+	<diskStore path="platformEhcache" />
+
+
+	<defaultCache eternal="false" maxElementsInMemory="1000"
+				   overflowToDisk="true" />
+
+	<!--配置验证码缓存 有效时间60秒-->
+	<cache name="verifyCodeCache"  timeToLiveSeconds="60"></cache>
+
+	<!--配置用户信息 有效时间60秒-->
+	<cache name="userInfo"  timeToIdleSeconds="1800"></cache>
+
+	<!--
+	name:缓存名称。
+	maxElementsInMemory：缓存最大个数。
+	eternal:对象是否永久有效，一但设置了，timeout将不起作用。 默认是false
+	timeToIdleSeconds：单位是秒，表示一个元素在不被请求的情况下允许在缓存中存在的最长时间。默认值是0，0表示不限制。仅当eternal=false对象不是永久有效时使用，可选属性，默认值是0，也就是可闲置时间无穷大。
+	timeToLiveSeconds：：单位是秒，表示一个元素不管有没有被使用，其在缓存中允许存在的最长时间。默认是0，0表示不限制。一般timeToLiveSeconds要比timeToIdleSeconds长，否则就timeToIdleSeconds就失去意义了。。
+	overflowToDisk：当内存中对象数量达到maxElementsInMemory时，Ehcache将会对象写到磁盘中。
+	diskSpoolBufferSizeMB：这个参数设置DiskStore（磁盘缓存）的缓存区大小。默认是30MB。每个Cache都应该有自己的一个缓冲区。
+	maxElementsOnDisk：硬盘最大缓存个数。
+	diskPersistent：是否缓存虚拟机重启期数据。
+	diskExpiryThreadIntervalSeconds：磁盘失效线程运行时间间隔，默认是120秒。
+	memoryStoreEvictionPolicy：当达到maxElementsInMemory限制时，Ehcache将会根据指定的策略去清理内存。默认策略是LRU（最近最少使用）。你可以设置为FIFO（先进先出）或是LFU（较少使用）。
+	clearOnFlush：内存数量最大时是否清除。
+	diskStore 则表示临时缓存的硬盘目录。
+
+	maxEntriesLocalDisk：指定允许在硬盘上存放元素的最大数量，0表示不限制。这个属性我们也可以在运行期通过CacheConfiguration来更改。
+    maxEntriesLocalHeap：指定允许在内存中存放元素的最大数量，0表示不限制。这个属性也可以在运行期动态修改。
+    maxEntriesInCache：指定缓存中允许存放元素的最大数量。这个属性也可以在运行期动态修改。但是这个属性只对Terracotta分布式缓存有用。
+    maxBytesLocalDisk：指定当前缓存能够使用的硬盘的最大字节数，其值可以是数字加单位，单位可以是K、M或者G，不区分大小写，如：30G。当在CacheManager级别指定了该属性后，Cache级别也可以用百分比来表示，如：60%，表示最多使用CacheManager级别指定硬盘容量的60%。该属性也可以在运行期指定。当指定了该属性后会隐式的使当前Cache的overflowToDisk为true。
+    maxBytesLocalHeap：指定当前缓存能够使用的堆内存的最大字节数，其值的设置规则跟maxBytesLocalDisk是一样的。
+    maxBytesLocalOffHeap：指定当前Cache允许使用的非堆内存的最大字节数。当指定了该属性后，会使当前Cache的overflowToOffHeap的值变为true，如果我们需要关闭overflowToOffHeap，那么我们需要显示的指定overflowToOffHeap的值为false。
+	-->
+</ehcache>
+
